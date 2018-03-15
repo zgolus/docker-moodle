@@ -100,7 +100,7 @@ $CFG->wwwroot   = getenv('MOODLE_URL');
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = '/var/moodledata';
+$CFG->dataroot  = getenv('MOODLE_DATAROOT');
 
 
 //=========================================================================
@@ -241,8 +241,19 @@ $CFG->admin = 'admin';
 //      $CFG->session_database_acquire_lock_timeout = 120;
 //
 //   File session handler (file system locking required):
-//      $CFG->session_handler_class = '\core\session\file';
-//      $CFG->session_file_save_path = $CFG->dataroot.'/sessions';
+     $CFG->session_handler_class = '\core\session\file';
+     $CFG->session_file_save_path = '/var/moodledata/sessions';
+
+ //   Redis session handler (requires redis server and redis extension):  //
+    // $CFG->session_handler_class = '\core\session\redis';
+    //  $CFG->session_redis_host = getenv('DB_ENV_REDIS_HOST');
+    //  $CFG->session_redis_port = 6379;  // Optional.
+    //  $CFG->session_redis_database = 0;  // Optional, default is db 0.
+    //  $CFG->session_redis_auth = getenv('DB_ENV_REDIS_AUTH'); // Optional, default is don't set one.
+    //  $CFG->session_redis_prefix = ''; // Optional, default is don't set one.
+    //  $CFG->session_redis_acquire_lock_timeout = 120;
+    //  $CFG->session_redis_lock_expire = 7200;
+
 //
 //   Memcached session handler (requires memcached server and extension):
 //      $CFG->session_handler_class = '\core\session\memcached';
