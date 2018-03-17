@@ -8,6 +8,8 @@ services:
   moodle:
     restart: always
     image: zgolus/moodle
+    depends_on: 
+      - mysql
     ports:
       - 180:80
       - 1443:443

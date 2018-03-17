@@ -1,0 +1,4 @@
+[submodule "app"]
+	path = app
+	url = git@github.com:zgolus/moodle.git
+	branch = MOODLE_34_STABLE
