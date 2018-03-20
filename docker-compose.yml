@@ -32,3 +32,11 @@ services:
       - MYSQL_ROOT_PASSWORD=moodle
       - MYSQL_USER=moodle
       - MYSQL_PASSWORD=moodle
+    volumes: 
+      - ./var/mysql:/var/lib/mysql
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

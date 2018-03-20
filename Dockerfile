@@ -24,6 +24,7 @@ RUN rm /var/www/html/index.html && \
 COPY ./foreground.sh /etc/apache2/foreground.sh
 COPY init_container.sh /bin/
 COPY sshd_config /etc/ssh/
+COPY php.ini /etc/php/7.0/apache2/
 
 RUN chmod +x /etc/apache2/foreground.sh && \
 	chmod 755 /bin/init_container.sh

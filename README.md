@@ -12,5 +12,5 @@ Tags:
 
 ## Credits
 
-This is a fork of (https://github.com/jhardison/moodle).
+This is a heavily reworked fork of (https://github.com/jhardison/moodle).
 
